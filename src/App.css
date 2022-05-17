@@ -1,38 +1,75 @@
+* {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: boder-box;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.board {
+  width: calc(64px * 8);
+  height: calc(64px * 8);
+  border: 16px solid #2e2300;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cell {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cell img {
+  width: 48px;
+  height: 48px;
+  position: relative;
+}
+
+.black {
+  background-color: #6e6702;
+}
+
+.white {
+  background-color: #db9501;
+}
+
+.selected {
+  background-color: #c05805;
+}
+
+.availed {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: #2e2300;
+}
+
+.choosenFigure {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  background-color: rgba(0, 255, 0, 0.3);
+}
+
+.enemyFigures {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  background-color: rgba(255, 000, 0, 0.3);
+}
+
+.lostFigures {
+  height: calc(50vh - 60px);
+  padding: 30px;
+  margin-left: 50px;
+  background-color: rgba(46, 35, 0, 0.3);
 }
