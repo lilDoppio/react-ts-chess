@@ -2,7 +2,7 @@
 
 Классические шахматы.
 
-![Иллюстрация к проекту](https://github.com/lilDoppio/pics/blob/main/chess_1.png)
+![Иллюстрация к проекту](https://github.com/lilDoppio/pics/blob/main/chess_2.png)
 
 # Getting Started with Create React App
 
