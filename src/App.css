@@ -1,11 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 * {
   margin: 0 auto;
   padding: 0;
   box-sizing: boder-box;
+  font-family: 'Heebo', sans-serif;
 }
 
 .App {
-  width: 100vw;
+  width: minmax(100vw);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gameSettings {
+  flex: 1;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.statsContainer {
+  flex: 1;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -67,9 +86,25 @@
   background-color: rgba(255, 000, 0, 0.3);
 }
 
-.lostFigures {
-  height: calc(50vh - 60px);
+.info {
   padding: 30px;
   margin-left: 50px;
   background-color: rgba(46, 35, 0, 0.3);
+  overflow: auto;
+}
+
+.lostFigures {
+  height: calc(50vh - 60px);
+  width: 150px;
+  border-left: 5px solid #2e2300;
+  border-right: 5px solid #2e2300;
+  text-align: center;
+}
+
+.gameLogs {
+  height: calc(100vh - 60px);
+  width: 150px;
+  border-left: 5px solid #2e2300;
+  border-right: 5px solid #2e2300;
+  text-align: center;
 }

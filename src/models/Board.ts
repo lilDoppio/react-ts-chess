@@ -7,11 +7,13 @@ import { Knight } from "./figures/Knight";
 import { Pawn } from "./figures/Pawn";
 import { Queen } from "./figures/Queen";
 import { Rook } from "./figures/Rook";
+import { Move } from "./Move";
 
 export class Board {
     cells: Cell[][] = []
     lostBlackFigures: Figure[] = []
     lostWhiteFigures: Figure[] = []
+    gameLogs: Move[] = []
 
     public initCells() {
         for (let i = 0; i < 8; i++) {
@@ -42,6 +44,7 @@ export class Board {
         newBoard.cells = this.cells;
         newBoard.lostBlackFigures = this.lostBlackFigures;
         newBoard.lostWhiteFigures = this.lostWhiteFigures;
+        newBoard.gameLogs = this.gameLogs
         return newBoard;
     }
 

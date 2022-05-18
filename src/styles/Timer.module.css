@@ -1,0 +1,11 @@
+.timerHolder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  width: calc(64px * 8 + 32px);
+}
+
+.h1 {
+  text-align: center;
+}

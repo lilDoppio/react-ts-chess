@@ -1,6 +1,7 @@
 import { Board } from "./Board";
 import { Colors } from "./Colors";
 import { Figure } from "./figures/Figure";
+import { Move } from "./Move";
 
 export class Cell {
     readonly x: number;
@@ -90,14 +91,19 @@ export class Cell {
         : this.board.lostWhiteFigures.push(figure)
     }
 
-    moveFigure(target: Cell) {
-        if(this.figure && this.figure?.canMove(target)) {
-            this.figure.moveFigure(target)
-            if (target.figure) {
-                this.addLostFigure(target.figure);
+    updateGameLogs(move: Move) {
+        this.board?.gameLogs.push(move)
+    }
+
+    moveFigure(move: Move) {
+        if(this.figure && this.figure?.canMove(move.to) && move.from !== null) {
+            this.figure.moveFigure(move.to)
+            if (move.to.figure) {
+                this.addLostFigure(move.to.figure);
             }
-            target.setFigure(this.figure);
+            move.to.setFigure(this.figure);
             this.figure = null;
+            this.updateGameLogs(move)
         }
     }
 }
