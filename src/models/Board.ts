@@ -7,13 +7,21 @@ import { Knight } from "./figures/Knight";
 import { Pawn } from "./figures/Pawn";
 import { Queen } from "./figures/Queen";
 import { Rook } from "./figures/Rook";
+import { KingPosition } from "./KingPosition";
 import { Move } from "./Move";
 
 export class Board {
-    cells: Cell[][] = []
-    lostBlackFigures: Figure[] = []
-    lostWhiteFigures: Figure[] = []
-    gameLogs: Move[] = []
+    cells: Cell[][] = [];
+    lostBlackFigures: Figure[] = [];
+    lostWhiteFigures: Figure[] = [];
+    gameLogs: Move[] = [];
+    whiteKing: Cell = new Cell(this, 4, 7, Colors.BLACK, null);
+    blackKing: Cell = new Cell(this, 4, 0, Colors.BLACK, null);
+
+    // constructor() {
+    //     this.whiteKing = new Cell(this, 4, 0, Colors.BLACK, null)
+    //     this.blackKing = new Cell(this, 4, 7, Colors.BLACK, null)
+    // }
 
     public initCells() {
         for (let i = 0; i < 8; i++) {
@@ -45,11 +53,21 @@ export class Board {
         newBoard.lostBlackFigures = this.lostBlackFigures;
         newBoard.lostWhiteFigures = this.lostWhiteFigures;
         newBoard.gameLogs = this.gameLogs
+        newBoard.whiteKing = this.whiteKing
+        newBoard.blackKing = this.blackKing
         return newBoard;
     }
 
     public getCell(x: number, y: number) {
         return this.cells[y][x]
+    }
+
+    public whiteKingPosotion(whiteKing: Cell) {
+        this.whiteKing = whiteKing
+    }
+
+    public blackKingPosotion(blackKing: Cell) {
+        this.blackKing = blackKing
     }
 
     private addKings() {
@@ -97,5 +115,6 @@ export class Board {
         this.addPawns()
         this.addQueens()
         this.addRooks()
+        
     }
 }

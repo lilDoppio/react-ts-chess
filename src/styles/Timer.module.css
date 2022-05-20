@@ -4,8 +4,26 @@
   align-items: center;
   margin: 10px 0;
   width: calc(64px * 8 + 32px);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.btnHolder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .h1 {
   text-align: center;
+}
+
+.span {
+}
+
+.input {
+  border: none;
+  width: 32px;
+  font-size: 18px;
+  font-weight: 700;
 }

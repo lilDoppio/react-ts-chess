@@ -11,21 +11,18 @@ export class King extends Figure {
         this.name = FigureNames.KING;
     }
 
-    isKingUnderAttack(target: Cell): number {
-        if(this.cell.isEmptyVertical(target))
-            if (target.figure?.name === FigureNames.QUEEN 
-            || target.figure?.name === FigureNames.ROOK)
-                return 1
-        if(this.cell.isEmptyHorizontal(target))
-            if (target.figure?.name === FigureNames.QUEEN 
-            || target.figure?.name === FigureNames.ROOK)
-                return 2
-        if(this.cell.isEmptyDiagonal(target))
-            if (target.figure?.name === FigureNames.QUEEN 
-            || target.figure?.name === FigureNames.BISHOP
-            || target.figure?.name === FigureNames.PAWN)
-                return 3
-        return 0
+    // isKingUnderAttack(target: Cell): boolean {
+    //     if(this.cell.isEmptyDiagonal(target)) {
+    //         if(target.figure?.name === FigureNames.QUEEN) {
+    //             console.log('ATTACK')
+    //         }
+    //         return true
+    //     }
+    //     return true
+    // }
+
+    setKingPosition(target: Cell) {
+        this.cell.board.blackKingPosotion(target)
     }
 
     canMove(target: Cell): boolean {
@@ -33,6 +30,8 @@ export class King extends Figure {
             return false
         const dx = Math.abs(this.cell.x - target.x);
         const dy = Math.abs(this.cell.y - target.y);
+
+        this.setKingPosition(target)
 
         return (dx < 2 && dy < 2)
     }

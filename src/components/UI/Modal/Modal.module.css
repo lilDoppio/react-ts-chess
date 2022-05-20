@@ -2,7 +2,7 @@
   position: fixed;
   display: flex;
   justify-content: center;
-  /* align-items: center; */
+  align-items: center;
   background-color: rgba(0, 0, 0, 0.4);
   top: 0;
   left: 0;
@@ -11,6 +11,7 @@
   opacity: 0;
   pointer-events: none;
   transition: ease-in-out 0.15s;
+  z-index: 100;
 }
 
 .modalActive {
@@ -22,12 +23,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
   margin-top: 25px;
   padding: 25px;
   min-width: 300px;
-  width: 500px;
-  height: 80px;
-  background: #fff;
-  border-radius: 6px;
+  width: 300px;
+  height: 100%;
   z-index: 10;
 }
