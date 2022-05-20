@@ -1,6 +1,6 @@
 # REACT TS CHESS
 
-Классические шахматы.
+Классические шахматы. in Progress.
 
 ![Иллюстрация к проекту](https://github.com/lilDoppio/pics/blob/main/chess_2.png)
 
